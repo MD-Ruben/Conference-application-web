@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Inter } from "next/font/google";
+// fr-FR locale is imported as frFR
+import { frFR } from "@clerk/localizations";
 
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "react-datepicker/dist/react-datepicker.css";
@@ -37,6 +39,7 @@ export default function RootLayout({
             colorInputText: "#fff",
           },
         }}
+        localization={frFR}
       >
         <body className={`${inter.className} bg-dark-2`}>
           {children}

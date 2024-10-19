@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/localizations": "^3.2.1",
     "@clerk/nextjs": "^5.0.0-beta.46",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
@@ -18,11 +19,15 @@
     "@stream-io/video-react-sdk": "^1.6.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.11.9",
     "lucide-react": "^0.451.0",
     "next": "14.2.15",
     "react": "^18",
     "react-datepicker": "^7.4.0",
     "react-dom": "^18",
+    "react-iframe": "^1.8.5",
+    "stream-chat": "^8.40.9",
+    "stream-chat-react": "^12.2.1",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"
   },

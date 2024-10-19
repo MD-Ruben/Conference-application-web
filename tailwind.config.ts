@@ -3,10 +3,11 @@ import type { Config } from 'tailwindcss';
 const config = {
   darkMode: ['class'],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: '',
   theme: {
@@ -62,10 +63,11 @@ const config = {
       },
       backgroundImage: {
         hero: "url('/images/hero-background.png')",
+        body: "url('/images/hero-1.jpg')",
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [],
 } satisfies Config;
 
 export default config;

@@ -7,6 +7,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 /* ======== stream css overrides ======== */
 .str-video__call-stats {

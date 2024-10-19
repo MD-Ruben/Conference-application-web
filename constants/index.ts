@@ -13,7 +13,7 @@ export const sidebarLinks = [
     {
       imgURL: '/icons/previous.svg',
       route: '/previous',
-      label: 'Précédent',
+      label: 'Précédente',
     },
     {
       imgURL: '/icons/Video.svg',
@@ -21,9 +21,19 @@ export const sidebarLinks = [
       label: 'Enregistrements',
     },
     {
+      imgURL: '/icons/upload.svg', 
+      route: '/charger',
+      label: 'Charger des documents',
+    },
+    {
       imgURL: '/icons/add-personal.svg',
       route: '/personal-room',
       label: 'Espace personnel',
+    },
+    {
+      imgURL: '/icons/public-room.svg',
+      route: '/public-room',
+      label: 'Espace public',  
     },
   ];
   

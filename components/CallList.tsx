@@ -33,9 +33,9 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
   const getNoCallsMessage = () => {
     switch (type) {
       case "ended":
-        return "Pas d'appels précédents";
+        return "Pas de réunions précédentes";
       case "upcoming":
-        return "Pas de prochains appels";
+        return "Pas de prochaines réunions";
       case "recordings":
         return "Pas d'enregistrements";
       default:
