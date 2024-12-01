@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
+import { LiveBadge } from "./LiveBadge";
 
 const Sidebar = () => {
   const pathname = usePathname();
@@ -39,6 +40,27 @@ const Sidebar = () => {
             </Link>
           );
         })}
+        <div className="space-y-4 pt-4 lg:pt-0">
+        <div>
+      <div className="pl-6 mb-4">
+        <p className="text-sm text-gray-300">Recommandé</p>
+      </div>
+      <div className="relative flex items-center gap-x-2 space-y-2 px-2">
+        <Image
+          src="/images/avatar-1.jpeg"
+          alt="avatar"
+          width={40}
+          height={40}
+          className="rounded-full"
+        />
+        <p>Christine</p>
+        <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2">
+          {/* En direct */}
+          <LiveBadge />
+        </div>
+      </div>
+    </div>
+        </div>
       </div>
     </section>
   );
