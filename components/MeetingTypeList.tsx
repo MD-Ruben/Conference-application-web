@@ -40,10 +40,10 @@ const MeetingTypeList = () => {
       }
       const id = crypto.randomUUID();
       const call = client.call("default", id);
-      if (!call) throw new Error("Échec de la création de la réunion");
+      if (!call) throw new Error("Échec de la création de la conférence");
       const startsAt =
         values.dateTime.toISOString() || new Date(Date.now()).toISOString();
-      const description = values.description || "Réunion instantanée";
+      const description = values.description || "Conférence instantanée";
       await call.getOrCreate({
         data: {
           starts_at: startsAt,
@@ -57,11 +57,11 @@ const MeetingTypeList = () => {
         router.push(`/meeting/${call.id}`);
       }
       toast({
-        title: "Réunion créée",
+        title: "Conférence créée",
       });
     } catch (error) {
       console.error(error);
-      toast({ title: "Échec de la création de la réunion" });
+      toast({ title: "Échec de la création de la conférence" });
     }
   };
 
@@ -73,28 +73,28 @@ const MeetingTypeList = () => {
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
       <HomeCard
         img="/icons/add-meeting.svg"
-        title="Nouvelle réunion"
-        description="Démarrer une réunion instantanée"
+        title="Nouvelle conférence"
+        description="Démarrer une conférence instantanée"
         handleClick={() => setMeetingState("isInstantMeeting")}
       />
       <HomeCard
         img="/icons/join-meeting.svg"
-        title="Rejoindre la réunion"
+        title="Rejoindre la conférence"
         description="via un lien d'invitation"
         className="bg-blue-1"
         handleClick={() => setMeetingState("isJoiningMeeting")}
       />
       <HomeCard
         img="/icons/schedule.svg"
-        title="Calendrier des réunions"
-        description="Planifiez votre réunion"
+        title="Calendrier des conférences"
+        description="Planifiez votre conférence"
         className="bg-purple-1"
         handleClick={() => setMeetingState("isScheduleMeeting")}
       />
       <HomeCard
         img="/icons/recordings.svg"
         title="Voir les enregistrements"
-        description="Enregistrements des réunions"
+        description="Enregistrements des conférences"
         className="bg-yellow-1"
         handleClick={() => router.push("/recordings")}
       />
@@ -103,7 +103,7 @@ const MeetingTypeList = () => {
         <MeetingModal
           isOpen={meetingState === "isScheduleMeeting"}
           onClose={() => setMeetingState(undefined)}
-          title="Créer une réunion"
+          title="Créer une conférence"
           handleClick={createMeeting}
         >
           <div className="flex flex-col gap-2.5">

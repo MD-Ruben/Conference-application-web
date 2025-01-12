@@ -120,3 +120,15 @@
     width: 100%;
   }
 }
+
+h1 {
+  font-family: var(--font-nunito);
+}
+
+h2 {
+  font-family: var(--font-ibm-plex-serif);
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-nunito);
+}

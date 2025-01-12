@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        'ibm-plex-serif': ['var(--font-ibm-plex-serif)'],
+        'nunito': ['var(--font-nunito)'],
+      },
       colors: {
         dark: {
           1: '#1C1F2E',
