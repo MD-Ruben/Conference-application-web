@@ -58,7 +58,7 @@ const PersonalRoom = () => {
   return (
     <section className="flex size-full flex-col gap-10 text-white">
       <h1 className="text-xl font-bold lg:text-3xl">
-        Salle de live personnelle
+        Salle de live personnel
       </h1>
       {/* <div className="flex w-full flex-col gap-8 xl:max-w-[900px]">
         <Table

@@ -4,6 +4,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import { fr } from "date-fns/locale";
+
 import HomeCard from "./HomeCard";
 import MeetingModal from "./MeetingModal";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
@@ -127,8 +129,9 @@ const MeetingTypeList = () => {
               showTimeSelect
               timeFormat="HH:mm"
               timeIntervals={15}
-              timeCaption="time"
-              dateFormat="MMMM d, yyyy h:mm aa"
+              timeCaption="Heure"
+              dateFormat="dd MMMM yyyy, HH:mm" // Format français
+              locale={fr} // Localisation en français
               className="w-full rounded bg-dark-3 p-2 focus:outline-none"
             />
           </div>
@@ -137,7 +140,7 @@ const MeetingTypeList = () => {
         <MeetingModal
           isOpen={meetingState === "isScheduleMeeting"}
           onClose={() => setMeetingState(undefined)}
-          title="Réunion créée"
+          title="Conférence créée"
           className="text-center"
           handleClick={() => {
             navigator.clipboard.writeText(meetingLink);
@@ -145,7 +148,7 @@ const MeetingTypeList = () => {
           }}
           image={"/icons/checked.svg"}
           buttonIcon="/icons/copy.svg"
-          buttonText="Copier le lien de la réunion"
+          buttonText="Copier le lien de la conférence"
         />
       )}
 
@@ -158,7 +161,7 @@ const MeetingTypeList = () => {
         handleClick={() => router.push(values.link)}
       >
         <Input
-          placeholder="Lien de la réunion"
+          placeholder="Lien de la conférence"
           onChange={(e) => setValues({ ...values, link: e.target.value })}
           className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
         />
@@ -167,9 +170,9 @@ const MeetingTypeList = () => {
       <MeetingModal
         isOpen={meetingState === "isInstantMeeting"}
         onClose={() => setMeetingState(undefined)}
-        title="Démarrer une réunion instantanée"
+        title="Démarrer une conférence instantanée"
         className="text-center"
-        buttonText="Débuter de la réunion"
+        buttonText="Débuter de la conférence"
         handleClick={createMeeting}
       />
     </section>
